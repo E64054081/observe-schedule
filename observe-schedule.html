@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台電電力宣導及水力排砂觀摩 - 互動資訊圖表</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F0F9FF;
+            color: #0F172A;
+        }
+        .flow-arrow::after {
+            content: '▼';
+            display: block;
+            text-align: center;
+            color: #0EA5E9;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .flow-arrow-horizontal::after {
+                content: '▶';
+                position: absolute;
+                right: -1.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #0EA5E9;
+                font-size: 1.5rem;
+                margin: 0;
+            }
+            .flow-arrow::after {
+                display: none;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-200">
+
+    <header class="bg-gradient-to-r from-sky-800 to-slate-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider uppercase bg-amber-500 text-slate-900 rounded-full">
+                        115年01月14日 更新
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2">
+                        電力宣導及水力排砂觀摩
+                    </h1>
+                    <p class="text-sky-200 text-lg md:text-xl font-light max-w-2xl">
+                        深入濁水溪流域，探索武界壩引水工程與日月潭水力排砂機制。
+                    </p>
+                </div>
+                <div class="mt-8 md:mt-0 flex flex-col items-center bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/20">
+                    <span class="text-3xl font-bold text-amber-400">7</span>
+                    <span class="text-xs uppercase tracking-wide text-sky-100">行程站點</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <section>
+            <div class="border-l-4 border-amber-500 pl-4 mb-8">
+                <h2 class="text-3xl font-bold text-slate-800">觀摩路徑與水理邏輯</h2>
+                <p class="text-slate-600 mt-2">
+                    本次行程沿著「水」的旅程：從上游武界壩攔水，經由引水隧道進入日月潭蓄水，最終在下游水里溪觀察排砂與發電尾水。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+                <div class="relative group">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-full relative z-10 hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-4">⛰️</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">上游：武界壩</h3>
+                        <p class="text-sm text-slate-500 mb-4">引水核心 (09:45)</p>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li class="flex items-start"><span class="text-amber-500 mr-2">●</span>攔截濁水溪水源</li>
+                            <li class="flex items-start"><span class="text-amber-500 mr-2">●</span>新舊引水隧道入口</li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-20 text-sky-400 text-2xl">▶</div>
+                    <div class="md:hidden text-center text-sky-400 text-2xl py-2">▼</div>
+                </div>
+
+                <div class="relative group">
+                    <div class="bg-sky-50 p-6 rounded-2xl shadow-sm border border-sky-200 h-full relative z-10 hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-4">🌊</div>
+                        <h3 class="text-xl font-bold text-sky-800 mb-2">中游：日月潭</h3>
+                        <p class="text-sm text-sky-600 mb-4">蓄水調節 (13:30)</p>
+                        <ul class="text-sm text-sky-700 space-y-2">
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">●</span>水庫調解與氣象監測</li>
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">●</span>發電設施進水口</li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-20 text-sky-400 text-2xl">▶</div>
+                    <div class="md:hidden text-center text-sky-400 text-2xl py-2">▼</div>
+                </div>
+
+                <div class="relative group">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-full relative z-10 hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-4">⚡</div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">下游：水里溪</h3>
+                        <p class="text-sm text-slate-500 mb-4">排砂出口 (16:00)</p>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li class="flex items-start"><span class="text-amber-500 mr-2">●</span>發電尾水排放</li>
+                            <li class="flex items-start"><span class="text-amber-500 mr-2">●</span>排砂隧道出口現勘</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 h-[800px] lg:h-[600px]">
+                
+                <div class="lg:col-span-5 bg-slate-50 border-r border-slate-200 overflow-y-auto custom-scrollbar p-6">
+                    <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-6 sticky top-0 bg-slate-50 z-10 py-2">
+                        行程時間軸
+                    </h3>
+                    <div id="timeline-list" class="space-y-4">
+                        </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-8 md:p-12 flex flex-col justify-center relative">
+                    <div class="absolute top-6 right-8 text-9xl text-slate-50 select-none font-black opacity-50 z-0" id="detail-bg-icon">
+                        ⚡
+                    </div>
+                    
+                    <div class="relative z-10 transition-all duration-500" id="detail-content">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span id="detail-badge" class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-bold">
+                                類別
+                            </span>
+                            <span id="detail-time" class="font-mono text-slate-400 text-lg">
+                                00:00~00:00
+                            </span>
+                        </div>
+                        
+                        <h2 id="detail-title" class="text-4xl font-bold text-slate-800 mb-2 leading-tight">
+                            請選擇左側行程
+                        </h2>
+                        
+                        <div class="flex items-center text-slate-500 mb-8">
+                            <span class="mr-2">📍</span>
+                            <span id="detail-location" class="text-xl">---</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 mb-8">
+                            <h4 class="text-sm font-bold text-slate-400 uppercase mb-2">活動詳情與重點</h4>
+                            <p id="detail-desc" class="text-slate-700 text-lg leading-relaxed">
+                                點擊左側列表中的項目，以查看詳細的內容。
+                            </p>
+                        </div>
+
+                        <div id="detail-extras" class="grid grid-cols-2 gap-4 hidden">
+                            <div class="bg-amber-50 p-4 rounded-lg border border-amber-100">
+                                <span class="block text-2xl mb-1">⚠️</span>
+                                <span class="text-xs font-bold text-amber-800 uppercase">注意事項</span>
+                                <p class="text-sm text-amber-700">請穿著防滑鞋具。</p>
+                            </div>
+                            <div class="bg-sky-50 p-4 rounded-lg border border-sky-100">
+                                <span class="block text-2xl mb-1">📸</span>
+                                <span class="text-xs font-bold text-sky-800 uppercase">拍照重點</span>
+                                <p class="text-sm text-sky-700">隧道結構與排砂壯觀景致。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <span class="text-2xl">⚡</span>
+                <span class="font-bold text-slate-200">台電公司</span>
+            </div>
+            <p class="mb-2">電力宣導及水力發電排砂觀摩行程表</p>
+            <p class="text-sm opacity-60">設計：Canvas Infographics</p>
+        </div>
+    </footer>
+
+    <script>
+        const timelineData = [
+            { id: 1, time: "08:30~09:45", rawTitle: "水里鄉公所集合出發", location: "水里鄉公所", type: "transport", desc: "進行人員清點與行前說明，搭車前往武界壩。", icon: "🚌" },
+            { id: 2, time: "09:45~11:15", rawTitle: "武界壩參觀", location: "武界壩", type: "visit", desc: "重點參訪武界壩改造工程，觀察新舊取水隧道，了解引水設施。", icon: "🏗️" },
+            { id: 3, time: "11:15~12:00", rawTitle: "前往埔里餐廳", location: "移動中", type: "transport", desc: "車程移動前往埔里市區。", icon: "🚌" },
+            { id: 4, time: "12:00~13:00", rawTitle: "埔里餐廳用餐", location: "埔里餐廳", type: "meal", desc: "享用午餐，交流心得。", icon: "🥢" },
+            { id: 5, time: "13:00~13:30", rawTitle: "前往日月潭", location: "移動中", type: "transport", desc: "車程移動前往日月潭周邊。", icon: "🚌" },
+            { id: 6, time: "13:30~14:30", rawTitle: "日月潭氣象站介紹", location: "日月潭氣象站", type: "visit", desc: "了解氣候監測對水力發電的重要性。", icon: "🌤️" },
+            { id: 7, time: "14:30~14:45", rawTitle: "移動", location: "移動中", type: "transport", desc: "前往發電設施觀測點。", icon: "🚌" },
+            { id: 8, time: "14:45~15:30", rawTitle: "發電設施及排砂現勘", location: "日月潭發電設施", type: "visit", desc: "實地現勘日月潭發電及排砂機制，核心技術觀摩點。", icon: "⚙️" },
+            { id: 9, time: "15:30~16:00", rawTitle: "前往水里溪", location: "移動中", type: "transport", desc: "前往下游水里溪。", icon: "🚌" },
+            { id: 10, time: "16:00~17:00", rawTitle: "水里溪排砂現勘", location: "水里溪", type: "visit", desc: "觀察排砂出口狀況，了解對下游生態的影響。", icon: "🌊" },
+            { id: 11, time: "17:00~", rawTitle: "野鴨谷晚宴", location: "野鴨谷餐廳", type: "meal", desc: "行程圓滿結束，舉辦聯誼晚宴。", icon: "🍷" }
+        ];
+
+        let selectedId = 2;
+        const timelineContainer = document.getElementById('timeline-list');
+
+        function renderList() {
+            timelineContainer.innerHTML = '';
+            timelineData.forEach(item => {
+                const isSelected = item.id === selectedId;
+                const el = document.createElement('div');
+                el.className = `cursor-pointer p-4 rounded-xl border transition-all duration-200 flex items-center gap-4 group hover:shadow-md ${isSelected ? 'bg-white border-sky-500 shadow-md ring-1 ring-sky-500' : 'bg-white border-slate-200 hover:border-sky-300'}`;
+                el.onclick = () => selectEvent(item.id);
+                el.innerHTML = `
+                    <div class="flex flex-col items-center justify-center w-12 h-12 rounded-full ${isSelected ? 'bg-sky-500 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-sky-100 group-hover:text-sky-600'} transition-colors shrink-0 text-lg">${item.icon}</div>
+                    <div class="flex-1 min-w-0">
+                        <div class="text-xs font-mono font-bold ${isSelected ? 'text-sky-600' : 'text-slate-400'}">${item.time.split('~')[0]}</div>
+                        <h4 class="truncate font-bold ${isSelected ? 'text-slate-900' : 'text-slate-600'}">${item.rawTitle}</h4>
+                    </div>`;
+                timelineContainer.appendChild(el);
+            });
+        }
+
+        function selectEvent(id) {
+            selectedId = id;
+            renderList();
+            updateDetailPanel(id);
+        }
+
+        function updateDetailPanel(id) {
+            const data = timelineData.find(d => d.id === id);
+            const contentContainer = document.getElementById('detail-content');
+            contentContainer.style.opacity = '0.5';
+            setTimeout(() => {
+                document.getElementById('detail-title').textContent = data.rawTitle;
+                document.getElementById('detail-time').textContent = data.time;
+                document.getElementById('detail-location').textContent = data.location;
+                document.getElementById('detail-desc').textContent = data.desc;
+                document.getElementById('detail-bg-icon').textContent = data.icon;
+                
+                const badgeEl = document.getElementById('detail-badge');
+                const extraBlock = document.getElementById('detail-extras');
+                if (data.type === 'visit') {
+                    badgeEl.className = "px-3 py-1 rounded-full text-sm font-bold bg-sky-100 text-sky-700";
+                    badgeEl.textContent = "觀摩考察";
+                    extraBlock.classList.remove('hidden');
+                } else if (data.type === 'meal') {
+                    badgeEl.className = "px-3 py-1 rounded-full text-sm font-bold bg-amber-100 text-amber-800";
+                    badgeEl.textContent = "用餐聯誼";
+                    extraBlock.classList.add('hidden');
+                } else {
+                    badgeEl.className = "px-3 py-1 rounded-full text-sm font-bold bg-slate-100 text-slate-600";
+                    badgeEl.textContent = "交通移動";
+                    extraBlock.classList.add('hidden');
+                }
+                contentContainer.style.opacity = '1';
+            }, 150);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderList();
+            updateDetailPanel(selectedId);
+        });
+    </script>
+</body>
+</html>
